@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>caulenhswitchcase</title>
 </head>
 <body>
-$END$
+    <input type="text" id="month" width="200">
+    <input id="tinh" type="button" value="Tinh so ngay" onclick="readMonth()">
+    <div id='showMonth'></div>
+    <script>
+        function readMonth() {
+            var month = parseInt(document.getElementById('month').value);
+            switch (month) {
+                case 1 :
+                case 3 :
+                case 5 :
+                case 7 :
+                case 8 :
+                case 10 :
+                case 12 :
+                    document.getElementById('showMonth').innerHTML = "Thang " + document.getElementById('month').value + " 31 Ngay"
+                    break;
+                case 2 :
+                    document.getElementById('showMonth').innerHTML = "Thang " + document.getElementById('month').value + " 28 hoac 29 ngay"
+                    break;
+                case 4 :
+                case 6 :
+                case 9 :
+                case 11 :
+                    document.getElementById('showMonth').innerHTML = "Thang " +  document.getElementById('month').value + " 30 Ngay"
+                    break;
+                default:
+                    document.getElementById('showMonth').innerHTML = "aaaa";
+                    break;
+            }
+        }
+
+    </script>
+
+
 </body>
 </html>

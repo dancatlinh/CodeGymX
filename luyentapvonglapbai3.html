@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var i;
+        var fib = [];
+        num = parseInt(prompt("Nhap so fibonaci can hien"));
+        let count = 0;
+        fib[0] = 0;
+        fib[1] = 1;
+        for (i = 2; i <= num && count <= num ; i++) {
+            fib[i] = fib[i - 2] + fib[i - 1];
+            document.write(fib[i] +"<br>");
+            count++
+        }
+    </script>
+
+</body>
+</html>

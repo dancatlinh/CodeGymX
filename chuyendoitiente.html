@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><table style="text-align: center; width: 50%; line-height: 30px">
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input type="number" value="number" id="Amount"></td>
+        <td><select name="From Currency" id="From">
+            <option value="1">Việt Nam</option>
+            <option value="23.000">USD</option>
+            <option value="3.423">Tệ</option>
+            <option value="28.091">EURO</option>
+            <option value="35.000.000">AU</option>
+        </select>
+        </td>
+        <td>
+            <select name="To Curency" id="To">
+                <option value="23.000">USD</option>
+                <option value="3.423">Tệ</option>
+                <option value="28.091">EURO</option>
+                <option value="1">Việt Nam</option>
+                <option value="35.000.000">AU</option>
+            </select>
+        </td>
+        <td>
+            <button type="button" onclick="Doi_Tien()">Convert</button>
+        </td>
+    </tr>
+</table>
+<p id="Result">Result</p>
+    <script>
+        function Doi_Tien(){
+            var amount = document.getElementById("Amount").value;
+            var  from = document.getElementById("From").value;
+            var to = document.getElementById("To").value;
+            var donvi = To.options[To.selectedIndex].innerHTML;
+            Result = amount*from/to
+            document.getElementById("Result").innerHTML = "Result: " +Result +donvi
+        }
+    </script>
+</body>
+</html>

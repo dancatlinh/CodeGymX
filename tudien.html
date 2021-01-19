@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+English <input type="text" width="50pt" id="English">
+<button onclick="translate1()">translate</button>
+<input type="text" width="50pt" id="VietNamese">VietNamese
+<script>
+
+
+    function translate1() {
+        var wordsEng = ["dog", "cat", "apple"];
+        var wordsVn = ["con cho", "con meo", "qua tao"];
+        let e = document.getElementById("English").value
+        if (wordsEng.indexOf(e) == -1) {
+            document.getElementById("VietNamese").value = "not found"
+        } else {
+            document.getElementById("VietNamese").value = wordsVn[wordsEng.indexOf(e)]
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

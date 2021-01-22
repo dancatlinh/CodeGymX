@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let anything = "qwqqqn";
+        let a = anything.split("")
+        let anyCharacter = prompt("Enter a chacracter")
+        function checkCharacter(character) {
+            var count = 0
+            for (let i = 0; i < character.length; i++) {
+            if (character[i] == anyCharacter ) {
+                count++
+            }
+            } document.write(count)
+        }
+
+        checkCharacter(a)
+
+    </script>
+
+</body>
+</html>

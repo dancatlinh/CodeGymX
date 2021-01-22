@@ -1,10 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<p id="end" style="width: 550px; height: 850px; border: 2px">
+<img id="img1" onclick="changeImage1()"  src="images\a1.jpg">
+<img id="img2" onclick="changeImage2()"  src="images\a2.jpg">
+<img id="img3" onclick="changeImage3()"  src="images\a3.jpg">
+<img id="img4" onclick="changeImage4()"  src="images\a4.jpg">
+</p>
+
+    <script>
+        function changeImage1() {
+            var anh1 = document.getElementById("img1").getAttribute('src');
+            if (anh1 == "images\\a1.jpg") {
+                document.getElementById("img1").src = "images\\b1.jpg";
+            } else if (anh1 == "images\\b1.jpg") {
+                document.getElementById("img1").src = "images\\c1.jpg";
+            } else {document.getElementById("img1").src = "images\\a1.jpg";}
+            endGame()
+        }
+        function changeImage2() {
+            var anh2 = document.getElementById("img2").getAttribute('src');
+            if (anh2 == "images\\a2.jpg") {
+                document.getElementById("img2").src = "images\\b2.jpg";
+            } else if (anh2 == "images\\b2.jpg") {
+                document.getElementById("img2").src = "images\\c2.jpg";
+            } else {document.getElementById("img2").src = "images\\a2.jpg";}
+            endGame()
+        }
+        function changeImage3() {
+            var anh3 = document.getElementById("img3").getAttribute('src');
+            if (anh3 == "images\\a3.jpg") {
+                document.getElementById("img3").src = "images\\b3.jpg";
+            } else if (anh3 == "images\\b3.jpg") {
+                document.getElementById("img3").src = "images\\c3.jpg";
+            } else {
+                document.getElementById("img3").src = "images\\a3.jpg";
+            }
+            endGame()
+        }
+        function changeImage4() {
+            var anh4 = document.getElementById("img4").getAttribute('src');
+            if (anh4 == "images\\a4.jpg") {
+                document.getElementById("img4").src = "images\\b4.jpg";
+            } else if (anh4 == "images\\b4.jpg") {
+                document.getElementById("img4").src = "images\\c4.jpg";
+            } else {
+                document.getElementById("img4").src = "images\\a4.jpg";
+            }
+            endGame()
+        }
+        function endGame() {
+            let mau1 = document.getElementById('img1').getAttribute('src');
+            let mau2 = document.getElementById('img2').getAttribute('src');
+            let mau3 = document.getElementById('img3').getAttribute('src');
+            let mau4 = document.getElementById('img4').getAttribute('src');
+            if ((mau1 == "images\\a1.jpg" && mau2 == "images\\a2.jpg" && mau3 == "images\\a3.jpg" && mau4 == "images\\a4.jpg")
+                || (mau1 == "images\\b1.jpg" && mau2 == "images\\b2.jpg" && mau3 == "images\\b3.jpg" && mau4 == "images\\b4.jpg")
+                || (mau1 == "images\\c1.jpg" && mau2 == "images\\c2.jpg" && mau3 == "images\\c3.jpg" && mau4 == "images\\c4.jpg")) {
+                document.getElementById('end').style.lineHeight = "0";
+            } else {
+                document.getElementById('end').style.lineHeight = "1";
+            }
+        }
+
+
+
+
+
+
+    </script>
+
+
 </body>
+
 </html>

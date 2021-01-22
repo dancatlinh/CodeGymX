@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        function minNumber(numbers) {
+            let min = numbers[0];
+            for (let i=0; i< numbers.length; i++) {
+                if ( numbers[i] < min) {
+                    min = numbers[i]
+                }
+            } return min;
+        }
+        let number1 = parseInt(prompt("Number1"))
+        let number2 = parseInt(prompt("Number2"))
+        let number3 = parseInt(prompt("Number3"))
+        let numbers = [number1,number2,number3]
+        document.write(minNumber(numbers));
+    </script>
+
+</body>
+</html>

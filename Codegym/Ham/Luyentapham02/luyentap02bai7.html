@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var number1 = prompt("number1");
+        var number2 = prompt("number2");
+        var numbers = [number1,number2];
+        let c
+        function swapNumber(numbers) {
+            c = numbers[0]
+            numbers[0] = numbers[1]
+            numbers[1] = c
+            return numbers
+        }
+        document.write(swapNumber(numbers))
+    </script>
+</body>
+</html>

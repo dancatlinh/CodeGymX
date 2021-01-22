@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><p1>Bai 1</p1>
+    <script>
+        var diemvatly = 5
+        var diemhoahoc = 5
+        var diemsinhhoc = 6
+        var diemTB = (diemvatly + diemhoahoc + diemsinhhoc)/3
+        var Tongdiemcacmon = diemvatly + diemhoahoc + diemsinhhoc
+        document.write("diemvatly =" + diemvatly)
+        document.write('<br/>')
+        document.write("diemhoahoc =" + diemhoahoc)
+        document.write('<br/>')
+        document.write("diemsinhhoc ="+ diemsinhhoc)
+        document.write('<br/>')
+        document.write("diemTB ="+ diemTB)
+        document.write('<br/>')
+        document.write("Tongdiemcacmon ="+ Tongdiemcacmon)
+    </script>
+
+    <p>Bai 2: C chuyển nó sang độ F</p>
+    <script>
+        let inputDoC;
+        let inputDoF;
+        inputDoC = prompt("Enter the Do C")
+        let DoC=parseInt(inputDoC)
+        let DoF=parseInt(inputDoF)
+        let DoCsangDoF = ( (DoC * 9)/5 +32 )
+        document.write("DoCsangdDoF:" + DoCsangDoF)
+    </script>
+    <p>Bai 3: Viết chương trình tính diện tích hình tròn</p>
+    <script>
+        let inputRadius
+        inputRadius = prompt("Enter the Radius")
+        let Radius=parseInt(inputRadius)
+        let area = Radius * Radius * Math.PI
+        document.write("The area is:"+ area)
+    </script>
+    <p>Bai 4: Viết chương trình chu vi hình tròn</p>
+    <script>
+        let inputDiameter
+        inputDiameter= prompt("Enter the Diameter")
+        let Diameter=parseInt(inputDiameter)
+        let Circuit = Diameter * Math.PI
+        document.write("The circuit is "+ Circuit)
+    </script>
+
+
+
+</body>
+</html>

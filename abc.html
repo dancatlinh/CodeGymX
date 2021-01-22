@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><p id="demo1">Số nguyên tố: </p>;
+    <script>
+        num =prompt("Hien thi cac so nguyen to ");
+        let count = 0
+        for (let i = 2;  count < num ; i++) {
+            let check = true
+            for (let j = 2; j < i - 1; j++) {
+                if (i % j == 0) {
+                    check = false;
+                    break;
+                }
+            }
+            if (check) {
+                document.getElementById("demo1").innerHTML += i;
+                count++;
+            }
+        }
+    </script>
+</body>
+</html>

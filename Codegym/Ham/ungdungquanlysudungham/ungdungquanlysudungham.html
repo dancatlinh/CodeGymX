@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body> <h2>Add New Product</h2>
+        <input type="text" id="txtValue">
+        <button id="bntAdd" onclick= "add_element_to_array();">Add</button>
+        <input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+        <h2>Display All Product</h2> <br>
+
+    <script>
+
+        var product = ["Sony Xperia","Samsung Galaxy","Nokia6","Xiaomi Redmi Note 4","Apple iPhone 6S","Xiaomi Mi 5s Plus","Apple iPhone 8 Plus","Fujitsu F-04E","Oppo A71" ];
+        function displayProduct(products) {
+            products.push("Mercedes");
+            products[0] = "Vinfast"
+            delete products[products.indexOf("BMW")]
+            return products;
+        }
+
+
+    </script>
+
+</body>
+</html>

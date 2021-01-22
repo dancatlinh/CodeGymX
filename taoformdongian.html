@@ -1,10 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+        <h1 style="background-color:orangered;font-size:300%;color:white;text-align:center;">
+            SỞ THÍCH CỦA BẠN
+        </h1>
+    <ul style="list-style-type:none">
+            <li>
+                <form action="/action_page.php">
+                    <p style="font-size:160%;color:blue"> Yourname
+                        <input name="fullname" type="textbox" >
+                </form>
+
+            </li>
+            <li>
+                    <p style="font-size:160%;color:blue;"> Email
+                        <input style="margin-left: 42px"  name="email" type="email">
+            </li>
+            <li>
+                <form method="POST" style="font-size:160%;color:blue">Hobby
+                    <label style="color:orange;margin-left:40px"><input  name="hobby" value="travel" type="checkbox"/>  Thể thao</label>
+                    <label style="color:orange;margin-left:10px"><input name="hobby" value="travel" type="checkbox"/> Âm nhạc</label>
+                    <label style="color:orange;margin-left:20px"><input name="hobby" value="travel" type="checkbox"/> Đọc sách</label> <br/>
+                    <label style="color:orange;margin-left:115px "><input name="hobby" value="travel" type="checkbox"/> Lướt web</label>
+                    <label style="color:orange;margin-left:2px"><input name="hobby" value="travel" type="checkbox"/> Chơi game</label>
+                    <label style="color:orange;margin-left:1px"><input name="hobby" value="travel" type="checkbox"/> Điện ảnh</label> <br/>
+                    <label style="color:orange;margin-left:115px "><input name="hobby" value="travel" type="checkbox"/> Du lịch</label> <br/>
+                        <input type="submit" value="Submit Form"/>
+                        <input type="reset" value="Reset Form"/>
+            </li>
+    </ul>
+<br><br><br>
+
+
 </body>
+<body>
+    <h1 style="background-color:lightblue;font-size:300%;color:blue;">
+        ĐĂNG KÝ HỌC VIÊN
+    </h1>
+    <ul style="list-style-type:none">
+        <li>
+            <form action="/action_page.php">
+                <p style="font-size:160%;color:blue"> Họ và tên
+                    <input name="fullname" type="textbox" >
+            </form>
+
+        </li>
+        <li>
+            <form action="/action_page.php">
+                <p style="font-size:160%;color:blue;"> Ngày sinh
+                <input style="margin-left: 42px"   type="date">
+            </form>
+        </li>
+        <li>
+            <label style="font-size:160%;color:blue;"> Giới tính</label>
+            <input type="radio" name="Giới tính">/ <label style="font-size:160%"> Nam
+            <input type="radio" name="Giới tính">/ Nữ
+        </li>
+        <li>
+            <form method="POST" style="font-size:160%;color:blue">Địa chỉ
+                <textarea cols="50" rows="4">
+                </textarea>
+            </form>
+        </li>
+            <label style="font-size:160%;color:blue;"> Lớp</label>
+                <select name="class">
+                <option value="Lớp">-Chọn lớp-</option>
+                <option value="9">Lớp 9</option>
+                <option value="8">Lớp 8</option>
+                <option value="7">Lớp 7</option>
+                <option value="6">Lớp 6</option>
+                </select>
+        <br>
+
+        <label style="font-size:160%;color:blue;"> Email </label>
+        <input style=" name="email" type="email"> </input>
+        <br>
+        <label style="font-size:160%;color:blue;"> Điện thoại </label>
+        <input style=" name="number" type="number">
+        <br>
+
+        <input type="submit" value="Đăng ký"/>
+        <input type="reset" value="Nhập lại"/>
+
+
+
+
+
+
+
+
+</body>
+
+
+
 </html>

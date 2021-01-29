@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <canvas id="myCanvas" width="400" height="500" style="border: 2px solid black"></canvas>
+</center>
+
+</body>
+</html>
+<script>
+    canvas = document.getElementById("myCanvas");
+    canvas.width = 400;
+    canvas.height = 500;
+    let score = 0;
+
+
+    function Ball(xBall, yBall, radius, speedXBall, speedYBall, color) {
+        this.xBall = xBall;
+        this.yBall = yBall;
+        this.radius = radius;
+        this.speedXBall = speedXBall;
+        this.speedYBall = speedYBall;
+        this.color = color;
+        this.drawBall = function () {
+            let ctx = canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.arc(this.xBall, this.yBall, this.radius, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.fillStyle = this.color;
+        }
+        this.updateBall = function () {
+            this.xBall += this.speedXBall
+            this.yBall += this.speedYBall
+
+        }
+
+        this.ballcollide = function () {
+            if (this.xBall < this.radius || this.xBall > canvas.width - this.radius) {
+                this.speedXBall = -this.speedXBall;
+            }
+            if (this.yBall < this.radius) {
+                (this.speedYBall = -this.speedYBall);
+            } else if (this.yBall + this.radius > bar.yBar) {
+                if (score >=1 ) {
+                    this.speedXBall = 2
+                    this.speedYBall = 0.8
+                }
+                if (score >= 2) {
+                    this.speedXBall = 2
+                    this.speedYBall = 1
+                }
+                if (score >= 4) {
+                    this.speedXBall = 2.5
+                    this.speedYBall = 1.2
+                }
+                if (score >= 5) {
+                    this.speedXBall = 2
+                    this.speedYBall = 2.5
+                }
+                if (score >= 6) {
+                    this.speedXBall = 3
+                    this.speedYBall = 2
+                }
+                if (score >= 7) {
+                    this.speedXBall = 2
+                    this.speedYBall = 4
+                }
+                if (score >= 8) {
+                    this.speedXBall = 6
+                    this.speedYBall = 3
+                }
+                if (score >= 9) {
+                    this.speedXBall = 5
+                    this.speedYBall = 6
+                }
+                if (score >=10) {
+                    this.speedXBall = 7
+                    this.speedYBall = 6.5
+                }
+                if (score >=11) {
+                    this.speedXBall = 7
+                    this.speedYBall = 9
+                }
+
+                if (this.xBall + this.radius >= bar.xBar && this.xBall <= bar.xBar + bar.widthBar
+                    && this.yBall + this.radius >= bar.yBar) {
+                    this.speedYBall = -this.speedYBall;
+                    score += 1;
+                }
+                if (this.yBall > canvas.height - this.radius) {
+                    //alert("GAME OVER! YOUR SCORE IS =" + score);
+                    let ctx = canvas.getContext('2d');
+                    ctx.beginPath();
+                    ctx.font = "60 Arial";
+                    ctx.fillStyle = "#FF0000";
+                    ctx.fillText("GAME OVER", 50, 250);
+
+                    clearInterval(interval);
+
+
+                }
+            }
+        }
+    }
+
+    function drawScore() {
+        let ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.font = "50px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText(" " + score, 170, 100);
+        ctx.closePath();
+    }
+
+
+    function Bar(xBar, yBar, widthBar, heightBar, colorBar, speedXBar) {
+        this.xBar = xBar;
+        this.yBar = yBar;
+        this.widthBar = widthBar;
+        this.heightBar = heightBar;
+        this.colorBar = colorBar;
+        this.speedXBar = speedXBar;
+        this.drawBar = function () {
+            let ctx = canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.fillStyle = this.colorBar
+            ctx.fillRect(this.xBar, this.yBar, this.widthBar, this.heightBar)
+        }
+        this.moveleftBar = function () {
+
+            if (this.xBar < 0)
+                return;
+            this.xBar -= this.speedXBar
+
+        }
+        this.moverightBar = function () {
+            if (this.xBar > canvas.width - this.widthBar) {
+                return;}
+            this.xBar += this.speedXBar;
+        }
+
+        function moveSelection(evt) {
+            switch (evt.keyCode) {
+                case 37:
+                    bar.moveleftBar();
+                    break;
+                case 39:
+                    bar.moverightBar();
+                    break;
+            }
+        }
+
+        function docReady() {
+            window.addEventListener('keydown', moveSelection);
+        }
+
+        docReady();
+    }
+
+    let ball = new Ball(30, 30, 15, 0.5, 0.5, "black");
+    let bar = new Bar(175, 450, 140, 10, "black", 50);
+
+    var interval = setInterval(function () {
+        let ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ball.drawBall();
+        drawScore()
+        bar.drawBar();
+        ball.updateBall();
+        ball.ballcollide()
+    }, 0)
+
+//requestAnimationFrame()
+</script>
+

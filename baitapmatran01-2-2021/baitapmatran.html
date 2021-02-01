@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arr = [[1,2,3,5],[4,5,6,7],[7,3,1,9],[7,7,2,9]];
+        // tinh tich tung cot, max
+        let maxMultiply = 1;
+        let mulArr = [];
+        for (let j=0; j < 3; j++) {
+            let multiply = 1;
+            for (let i=0; i< arr.length; i++) {
+                multiply *= arr[i][j];
+            }
+              mulArr[j] = multiply;
+            if (multiply > maxMultiply) {
+                 maxMultiply = multiply
+            }
+        }
+        document.write(maxMultiply)
+
+        // Tong duong cheo chinh, duong cheo phu
+
+        function sumDiagonal(arr) {
+            let mainSum = 0;
+            let secondarySum =0;
+            for (let row =0; row < arr.length; row++) {
+                mainSum += arr[row][row];
+                secondarySum += arr[row][arr[row].length - row -1];
+            }
+            document.write("<br>" + "duong cheo chinh: "+ mainSum + "duong cheo phu: " + secondarySum);
+        }
+       sumDiagonal(arr)
+
+        //
+    </script>
+
+</body>
+</html>

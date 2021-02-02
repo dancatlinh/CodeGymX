@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function DaThuc(n) {
+            this.n = n;
+            this.heSo = [];
+
+            this.nhapDaThuc = function () {
+                for(let i = n; i>=0; i--) {
+                    this.heSo[i] = prompt("Nhap vao he so bac" + i);
+                }
+            }
+
+            this.inDaThuc = function () {
+                let str = ""
+                for (let i =n; i>= 1; i--) {
+                    str += this.heSo[i] + "x^" + i + "+";
+                }
+                str += this.heSo[0];
+                return str;
+            }
+        }
+
+        let n = prompt("Nhap vao bac da thuc: ");
+        let dt = new DaThuc(n);
+        dt.nhapDaThuc();
+        alert(dt.inDaThuc());
+    </script>
+
+</body>
+</html>

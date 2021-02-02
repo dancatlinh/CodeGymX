@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="res">
+
+    </div>
+    <script>
+        class Students {
+            constructor(idStudent, name, math, physics, chemistry) {
+                this.idStudent = idStudent
+                this.name = name;
+                this.math = math;
+                this.physics =physics;
+                this.chemistry =chemistry;
+                this.averagePoint = (math + physics + chemistry)/3;
+                this.show = function () {
+                    return "idStudent: " + this.idStudent + ", name: " + this.name + ", averagePoint " + this.averagePoint
+                }
+            }
+        }
+
+        function manageStudents() {
+            this.listStudents = [new Students(1, "A", 7, 7, 7), new Students(2, "B", 8, 8, 8), new Students(3, "C", 9, 2, 9)];
+            this.add = function (stu) {
+                this.listStudents.push(stu);
+            }
+            this.delete = function (idStudent) {
+                for (let i = 0; i < this.listStudents.length; i++) {
+                    if (idStudent == this.listStudents[i].idStudent) {
+                        this.listStudents.splice(i, 1);
+                    }
+                }
+            }
+            this.show = function () {
+                let str = "";
+                for (let i = 0; i < this.listStudents.length; i++) {
+                    str += this.listStudents[i].show() + "<br>";
+                }
+                return str;
+            }
+
+            this.edit = function (idStudent, stu) {
+                for (let i = 0; i < this.listStudents.length; i++) {
+                    if (idStudent == this.listStudents[i].idStudent) {
+                        this.listStudents[i] = stu;
+                    }
+                }
+            }
+            // this.sortAveragePoint = function () {
+            //     for (let i=0; i < this.listStudents.length; i++) {
+            //         for (let j = i + 1; j < this.listStudents.length; j++) {
+            //             if (this.listStudents[j].averagePoint < this.listStudents[i].averagePoint) {
+            //                 let temp = this.listStudents[i];
+            //                 this.listStudents[i] = this.listStudents[j];
+            //                 this.listStudents[j] =temp;
+            //             }
+            //         }
+            //     }
+            // }
+            this.sortByAveragePoint = function () {
+                this.listStudents.sort(function (a, b) {
+                    return a.averagePoint - b.averagePoint
+                });
+            }
+        }
+        let managestudents = new manageStudents();
+        managestudents.add(new Students(5,"Long",9,9,9));
+        managestudents.edit(1,new Students(6,"Loc",6,6,6 ));
+        managestudents.sortByAveragePoint();
+        document.getElementById("res").innerHTML = managestudents.show()
+
+
+
+    </script>
+</body>
+</html>

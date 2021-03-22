@@ -54,19 +54,19 @@ sc.nextLine();
         }
     }
 
-    public static PhoneBook findByPhoneNumber(String phone) {
-        PhoneBook phoneNumber = null;
-        for (PhoneBook p : PhoneBookManager.listPhoneBook) {
-            if (p.getPhoneNumber().equals(phone)) {
-                phoneNumber = p;
-            }
+    public void  findByPhoneNumber() {
+        System.out.println("Nhập số điện thoại");
+        String phoneNumber = sc.nextLine();
+        for (int i = 0; i < listPhoneBook.size(); i++) {
+            if (listPhoneBook.get(i).getPhoneNumber().equals(phoneNumber)) {
+            System.out.println(listPhoneBook.get(i).toString());}
         }
-        return phoneNumber;
     }
+
 
     public void WriteCSV() {
         try {
-            File file = new File("data/contacts.csv");
+            File file = new File("contacts.csv");
             FileWriter fileWriter = new FileWriter(file);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for (int i = 0; i < listPhoneBook.size(); i++) {
@@ -82,7 +82,7 @@ sc.nextLine();
 
     public void ReadCSV() {
         try {
-            File file = new File("data/contacts.csv");
+            File file = new File("contacts.csv");
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String read;
@@ -108,8 +108,4 @@ sc.nextLine();
             e.printStackTrace();
         }
     }
-
-
-
-
 }
